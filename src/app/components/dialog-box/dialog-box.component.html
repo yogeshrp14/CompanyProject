@@ -1,0 +1,86 @@
+<div class="container">
+  <h1>{{title}}</h1>
+  <hr />
+  <div class="row">
+    <div class="col-md-6">
+      <form #companyForm='ngForm'(ngSubmit)="updateCompany(companyForm)" >
+
+
+
+        <div class="form-group">
+          <div class="form-row">
+            <label class="col-md-3">Name <span class="error"></span></label>
+            <div class="col-md-9">
+              <input name="name" [(ngModel)]="selectedCompany.name"  class="form-control" />
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <label class="col-md-3">Description <span class="error"></span></label>
+            <div class="col-md-9">
+              <input name="description" [(ngModel)]="selectedCompany.description" class="form-control" />
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <label class="col-md-3">Number <span class="error"></span></label>
+            <div class="col-md-9">
+              <input name="number"  [(ngModel)]="selectedCompany.number" class="form-control" />
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="form-row">
+            <label class="col-md-3">Email <span class="error"></span></label>
+            <div class="col-md-9">
+              <input name="email" [(ngModel)]="selectedCompany.email" class="form-control" />
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <label class="col-md-3">Salary <span class="error"></span></label>
+            <div class="col-md-9">
+              <input name="salary" [(ngModel)]="selectedCompany.salary" class="form-control" />
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <label class="col-md-3">State <span class="error"></span></label>
+            <div class="col-md-9">
+              <input name="state" [(ngModel)]="selectedCompany.state" class="form-control" />
+
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <label class="col-md-3">City <span class="error"></span></label>
+            <div class="col-md-9">
+              <input name="city" [(ngModel)]="selectedCompany.city" class="form-control" />
+             -->
+            </div>
+          </div>
+        </div>
+<input type="submit" value="UpdateData" class="btn btn-primary">
+
+      </form>
+
+    </div>
+  </div>
+</div>
+

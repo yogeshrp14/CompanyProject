@@ -1,0 +1,53 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-8">
+          <h1>{{title}}</h1>
+      </div>
+
+
+      <div class="col-md-4 text-right">
+          <button routerLink="/createnew" class="btn btn-success btn-sm ">Add Company</button>
+
+            <input class="form-control btn-sm" placeholder="Search Here" type="text" name="search" [(ngModel)]="searchText">
+
+      </div>
+  </div>
+  <hr />
+  <div class="table-responsive">
+      <table class="table table-stripped table-bordered">
+          <tr class="thead-light">
+              <th>Name</th>
+              <th>Description</th>
+              <th>Number</th>
+              <th>Email</th>
+              <th>Salary</th>
+              <th>State</th>
+              <th>City</th>
+              <th colspan="2"></th> 
+
+          </tr>
+          <ng-container *ngFor="let company of companies | orderBy:key:reverse | filter:searchText | paginate: { itemsPerPage: 5, currentPage: p}" >
+              <tr>
+                  <td>{{company.name}}</td>
+                  <td>{{company.description}}</td>
+                  <td>{{company.number}}</td>
+                  <td>{{company.email}}</td>
+                  <td>{{company.salary}}</td>
+                  <td>{{company.state}}</td>
+                  <td>{{company.city}}</td>
+
+
+                  <td> <button class="btn btn-warning" (click)='edit(company._id)'>Edit</button>   </td>
+                  <td>   <button class="btn btn-danger" (click)='deleteCompany(company._id)'>Delete</button>  </td>
+                       <!-- <button [routerLink]="['/dialogbox', company.id]" class="btn btn-sm btn-info mr-2">Edit</button>
+                      <button [routerLink]="javascript:void(0)" class="btn btn-sm btn-danger" (click)="deleteProduct(company.id)">Delete</button> -->
+
+              </tr>
+          </ng-container> -->
+
+      </table>
+
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </div>
+</div>
